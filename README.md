@@ -80,7 +80,7 @@ This template contains standard operations that can be used for the following:
 3. publicKey - public key of the signer
 
 ## FLO Blockchain API Operations
-`floBlockchainAPI` operations can be used to send/recieve data to/from blockchain. `floBlockchainAPI` operations are asynchronous and return a promise. Contains the following Operations.
+`floBlockchainAPI` object method can be used to send/recieve data to/from blockchain.These functions are asynchronous and return a promise. Contains the following functions.
 
 #### promisedAJAX
 	floBlockchainAPI.promisedAJAX(method, uri)
@@ -89,6 +89,26 @@ This template contains standard operations that can be used for the following:
   a.GET - Requests data from a specified resource.
   b.POST - Submits data to be processed to a specified resource.
 2. uri(Uniform Resource Identifier) - identifier for AJAX resource. It is used to create URL(Uniform Resource Locator) for further operations.
+
+#### getBalalnce
+	floBlockchainAPI.getBalance(addr)
+`getBalance` resolves balance for specified FLO address.
+1. addr - FLO address for which balance has to be retrieved.
+
+#### sendTx 
+	floBlockchainAPI.sendTx(senderAddr, receiverAddr, sendAmt, PrivKey, floData = '')
+`sendTx` sends a transaction to blockchain, resolves transaction id if the transacation was succsessful. 
+1. senderAddr - FLO address from which the data and amount has to be sent.
+2. receiverAddr - FLO address to which has to be sent.
+3. sendAmt - Amount of FLO coins to be sent to receiver.
+4. PrivKey - Private key of sender to verify sender.
+5. floData - Actual FLO data that will be sent as string of 1040 characters.
+
+#### getNewTxs 
+	floBlockchainAPI.getNewTxs(addr, ignoreOld)
+`getNewTxs` gets new transactions from blockchain since last sync using API.
+1. addr - FLO address for which the transactions has to be synced 
+2. ignoreOld - Last synced transactions.
 
 ## Compact IndexedDB operations
 `compactIDB` operations can be used to perform basic IndexedDB operations such as add, read/write, modify and remove.Contains following operations.
