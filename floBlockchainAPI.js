@@ -6,7 +6,7 @@
     const DEFAULT = {
         blockchain: floGlobals.blockchain,
         apiURL: {
-            FLO: ['https://flosight.duckdns.org/', 'https://flosight.ranchimall.net/'],
+            FLO: ['http://flosightdev.duckdns.org/'],
             FLO_TEST: ['https://testnet-flosight.duckdns.org', 'https://testnet.flocha.in/']
         },
         sendAmt: 0.0003,
