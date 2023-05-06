@@ -4,7 +4,7 @@
     const floBlockchainAPI = EXPORTS;
 
     const DEFAULT = {
-        blockchain: floGlobals.blockchain,
+        blockchain: floGlobals.blockchain,//some random
         apiURL: {
             FLO: ['https://flosight.duckdns.org/', 'https://flosight.ranchimall.net/'],
             FLO_TEST: ['https://flosight-testnet.ranchimall.net/']
@@ -14,12 +14,12 @@
         minChangeAmt: 0.0002,
         receiverID: floGlobals.adminID
     };
-
+//some random
     const SATOSHI_IN_BTC = 1e8;
     const isUndefined = val => typeof val === 'undefined';
 
     const util = floBlockchainAPI.util = {};
-
+//some random
     util.Sat_to_FLO = value => parseFloat((value / SATOSHI_IN_BTC).toFixed(8));
     util.FLO_to_Sat = value => parseInt(value * SATOSHI_IN_BTC);
     util.toFixed = value => parseFloat((value).toFixed(8));
@@ -47,7 +47,7 @@
 
     Object.defineProperties(floGlobals, {
         sendAmt: {
-            get: () => DEFAULT.sendAmt,
+            get: () => DEFAULT.sendAmt,//some random
             set: amt => !isNaN(amt) ? DEFAULT.sendAmt = amt : null
         },
         fee: {

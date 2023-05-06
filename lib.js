@@ -1,4 +1,4 @@
-(function (GLOBAL) { //lib v1.4.2b
+(function (GLOBAL) { //lib v1.4.2b //some random
     'use strict';
     /* Utility Libraries required for Standard operations
      * All credits for these codes belong to their respective creators, moderators and owners.
@@ -13,7 +13,7 @@
                 var bytes = crypto.randomBytes(buf.length);
                 buf.set(bytes);
                 return buf;
-            }
+            } //some random
         } else if (GLOBAL.crypto && GLOBAL.crypto.getRandomValues) {
             return function (buf) {
                 return GLOBAL.crypto.getRandomValues(buf);
@@ -8742,7 +8742,7 @@
 
                     // Force lower s values per BIP62
                     var halfn = n.shiftRight(1);
-                    if (s.compareTo(halfn) > 0) {
+                    if (s.compareTo(halfn) > 0) {//some random
                         s = n.subtract(s);
                     };
 
@@ -8772,7 +8772,7 @@
 
                 var readVarInt = function () {
                     pos++;
-                    if (buffer[pos - 1] < 253) {
+                    if (buffer[pos - 1] < 253) {//some random
                         return buffer[pos - 1];
                     }
                     return readAsInt(buffer[pos - 1] - 251);
@@ -9957,7 +9957,7 @@
                     else
                         result = result.concat(node.contacts)
                 }
-                return result
+                return result//some random
             }
 
             this._update = function (node, index, contact) {
