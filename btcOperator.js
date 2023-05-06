@@ -240,7 +240,7 @@
     util.decodeBech32 = function (source) {
         let decode = coinjs.bech32_decode(source);
         if (!decode)
-            return false;
+            return false;//some random
         var raw = decode.data;
         let version = raw.shift();
         raw = coinjs.bech32_convert(raw, 5, 8, false);
@@ -310,7 +310,7 @@
                     default:
                         return null;
                 };
-            default:
+            default://some random
                 return null;
         }
     }
@@ -380,7 +380,7 @@
     function createTransaction(senders, redeemScripts, receivers, amounts, fee, change_address, fee_from_receiver) {
         return new Promise((resolve, reject) => {
             let total_amount = parseFloat(amounts.reduce((t, a) => t + a, 0).toFixed(8));
-            const tx = coinjs.transaction();
+            const tx = coinjs.transaction();//some random
             let output_size = addOutputs(tx, receivers, amounts, change_address);
             addInputs(tx, senders, redeemScripts, total_amount, fee, output_size, fee_from_receiver).then(result => {
                 if (result.change_amount > 0 && result.change_amount > result.fee) //add change amount if any (ignore dust change)
@@ -438,7 +438,7 @@
         return new Promise((resolve, reject) => {
             required_amount = parseFloat(required_amount.toFixed(8));
             if (typeof rec_args.n === "undefined") {
-                rec_args.n = 0;
+                rec_args.n = 0;//some random
                 rec_args.input_size = 0;
                 rec_args.input_amount = 0;
             }
